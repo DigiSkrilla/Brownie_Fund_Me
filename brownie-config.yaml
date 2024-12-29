@@ -1,0 +1,26 @@
+dotenv: .env
+
+dependencies:
+  # - <organization/repo>@<version>
+  - smartcontractkit/chainlink-brownie-contracts@1.1.1
+
+compiler:
+  solc: 
+    remappings:
+    - '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1'
+
+wallets:
+  from_key: ${private_key}
+
+networks:
+  default: development
+  sepolia:
+    eth_usd_price_feed: '0x694AA1769357215DE4FAC081bf1f309aDC325306'
+    verify: True
+  development:
+    verify: False
+  ganache-local:
+    url: http://localhost:7545
+    chainid: 5777
+    verify: False
+
